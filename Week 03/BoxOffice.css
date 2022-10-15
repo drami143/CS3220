@@ -1,0 +1,14 @@
+a:link, a:visited{
+   text-decoration: none; 
+   color: blue;
+}
+table {
+    border-collapse: collapse;
+}
+
+td {
+border-top: 2px;
+border-top-style: solid;
+border-bottom:4px;
+border-bottom-style: double;
+}
