@@ -1,0 +1,31 @@
+a:link, a:visited {
+    text-decoration: none;
+    color: blue;
+}
+
+#form {
+    border-style: solid;
+    padding:7px;
+    width:350px;
+}
+
+.left {
+    width: 125px;
+    float:left;
+    margin-top: 6px;
+    
+}
+  
+.right {
+    margin-top: 6px;
+    float: left;
+    width: 60%;
+}
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.letters{
+    font-weight: bolder;
+}
