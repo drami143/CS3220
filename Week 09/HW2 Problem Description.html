@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS3220 HW2</title>
+</head>
+
+<body>
+    <h2>CS3220 Homework 2</h2>
+
+    <p>Please deploy your application on CS3, and package your project in a zip file and submit it to Canvas. The
+        open-source software tool <a href="https://www.7-zip.org/">7-Zip</a> can be used to create the zip file. Please
+        also create and submit an HTML file <em>hw2.html</em> which contains a hyperlink to your application
+        on the CS3 server.</p>
+    <hr />
+    <p>In this assignment you will continue to work on the art school application from Lab 9 to add functions to
+        manage students and groups. <strong>Your HW2 code will conflict with your Lab 9 code on CS3,</strong> so do NOT
+        deploy your HW2 on CS3 until a) Lab 9 is graded and you do not plan to contest the grade, and b) you have
+        removed Lab 9 code from CS3.</p>
+
+    <p>1. List Student (15pt)</p>
+
+    <p>Modify the student listing page so it also shows the group a student belongs to and an Edit link (or button).
+        For example:</p>
+
+    <p style="margin-left: 40px;"><a href="#">New Student</a></p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Age</th>
+                    <th>Parent</th>
+                    <th>Email</th>
+                    <th>Group</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>4</td>
+                    <td>Sue</td>
+                    <td>sue@gmail.com</td>
+                    <td>Minnows</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>9</td>
+                    <td>Sue</td>
+                    <td>sue@gmail.com</td>
+                    <td>Dolphines</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Luke</td>
+                    <td>5</td>
+                    <td>Steve</td>
+                    <td>steve@gmail.com</td>
+                    <td>Minnows</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+                <tr>
+                    <td>Tina</td>
+                    <td>7</td>
+                    <td>Paula</td>
+                    <td>paula@gmail.com</td>
+                    <td>&nbsp;</td>
+                    <td><a href="#">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>If a student does not belong to any group, the group column for the student is empty.</p>
+
+    <p>2. Edit Student (40pt)</p>
+
+    <p>Clicking on an Edit link (or button) on the student listing page should take the user to a page where the
+        information of the corresponding student can be edited. For example:
+    </p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" value="John"></td>
+                </tr>
+                <tr>
+                    <th>Birth Year</th>
+                    <td><input type="text" value="2017"></td>
+                </tr>
+                <tr>
+                    <th>Parent Name</th>
+                    <td><input type="text" value="Sue"></td>
+                </tr>
+                <tr>
+                    <th>Parent Email</th>
+                    <td><input type="text" value="sue@gmail.com"></td>
+                </tr>
+                <tr>
+                    <th>Group</th>
+                    <td><select>
+                            <option></option>
+                            <option selected>Minnows</option>
+                            <option>Dolphins</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" scope="row"><button>Save</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that the form must be pre-filled with the current information of the student. In particular, if the student
+        belongs to a group, the group should be selected in the group dropdown list. After the information of the
+        student
+        is updated, the user should be redirected to the student listing page.
+    </p>
+
+    <p>3. Edit Group (30pt)</p>
+
+    <p>Similar to the student listing page, modify the group listing page to add an Edit link (or button) to each group.
+        When an Edit link (or button) is clicked, the user should be taken to a page where the group information can
+        be edited. For example:</p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" value="Minnows" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <ul>
+                            <li>John <a href="#">[Remove]</a></li>
+                            <li>Luke <a href="#">[Remove]</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" scope="row"><button>Save</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that the Edit Group page shows a form to change the name of the group, as well as links (or buttons) that
+        can be used to remove individual students from the group. After the name of the group is updated, the user
+        should be redirected to the group listing page.
+    </p>
+
+    <p>4. Remove Student from Group (15pt) </p>
+
+    <p>Clicking on a Remove link (or button) on the Edit Group page will remove the corresponding student from group.
+        After the student is removed from the group, the user should be redirected back to the Edit Group page.
+    </p>
+
+    <p>5. (40pt) Use Bootstrap to style the application. In particular,</p>
+    <ul>
+        <li>Tables must use Bootstrap <a href="https://getbootstrap.com/docs/5.1/content/tables/">table styles</a>.</li>
+        <li>Forms must use Bootstrap <a href="https://getbootstrap.com/docs/5.1/forms/overview/">form styles</a>.</li>
+        <li>Links and buttons must use Bootstap <a
+                href="https://getbootstrap.com/docs/5.1/components/buttons/">Buttons</a>. Note that you can make
+            a link to look like a button by giving it the Bootstrap <samp>btn</samp> class.</li>
+        <li>Every page except the home page should use Bootstrap
+            <a href="https://getbootstrap.com/docs/5.1/components/breadcrumb/">Breadcrumb</a> so the user can easily
+            navigate back to previous pages. For example, the Edit Student page should have breadcrumb to go to the
+            home page and the student listing page.
+        </li>
+    </ul>
+    <p>You may choose to use either Boostrap 5.x or 4.x (and when you look up Bootstrap documentation on their
+        website, be aware of which version the documetnation is for.) </p>
+</body>
+
+</html>
