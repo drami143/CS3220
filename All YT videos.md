@@ -25,3 +25,15 @@ https://www.youtube.com/watch?v=33OVw_X5dhA&ab_channel=senturain
 
 Upload HTML Pages to CS3 Using FileZilla
 https://www.youtube.com/watch?v=X221ctlY0dI&ab_channel=senturain
+
+JavaScript Basics
+https://www.youtube.com/watch?v=X4-o2tOyhmQ&ab_channel=senturain
+
+Database Access with JDBC
+https://www.youtube.com/watch?v=seTzVJqG9t8&ab_channel=senturain
+
+Asynchronous JavaScript and XML (AJAX)
+https://www.youtube.com/watch?v=XO3EGnXsuqw&ab_channel=senturain
+
+Midterm 2017
+https://csns.cysun.org/file/view?id=5890988
