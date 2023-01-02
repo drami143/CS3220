@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS3220 HW4</title>
+</head>
+
+<body>
+    <h2>CS3220 Homework 4</h2>
+
+    <p>Please deploy your application on CS3, and package your project in a zip file and submit it to Canvas. The
+        open-source software tool <a href="https://www.7-zip.org/">7-Zip</a> can be used to create the zip file. Please
+        also create and submit an HTML file <em>hw4.html</em> which contains a hyperlink to your application
+        on the CS3 server.</p>
+    <hr />
+
+    <p>In this assignment you will add lesson management functions to the art school web application you have
+        been developing in previous assignments. Your implementation must meet the following requirements:
+    </p>
+    <ul>
+        <li>The application must use MVC architecture.</li>
+        <li>All application data must be stored in database, and database access must use JDBC.</li>
+        <li>All features described in previous assignments must work; otherwise you may not receive any credit.</li>
+        <li>In addition to the application source code, please turn in an SQL script file <em>hw4.sql</em> which
+            contains the statements to create and populate all the tables in the database.</li>
+    </ul>
+    
+    <p>1. Home Page</p>
+    <p>Add another link or button to the home page like the following:</p>
+    <p style="margin-left: 40px;"><a href="#">Students</a> | <a href="#">Groups</a> | <a href="#">Lessons</a></p>
+    <p>Clicking on <em>Lessons</em> should take the user to the lessons listing page.</p>
+    
+    <p>2. List Lessons (+30pt)</p>
+
+    <p>The lessons listing page displays all the lessons in the system in reverse chronological order with
+        the most recent lesson first. For example:</p>
+
+    <p style="margin-left: 40px;"><a href="#">Add Lesson</a></p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Length</th>
+                    <th>Student(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11/14/2021 1:30PM</td>
+                    <td>90</td>
+                    <td><a href="#">Dolphins</a></td>
+                </tr>
+                <tr>
+                    <td>11/14/2021 10:00AM</td>
+                    <td>90</td>
+                    <td><a href="#">Minnows</a></td>
+                </tr>
+                <tr>
+                    <td>11/13/2021 1:30PM</td>
+                    <td>90</td>
+                    <td>Tina</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that the length of a lesson is in minutes. A lesson can be either a group lesson or an
+        individual lesson. The <em>Student(s)</em> column shows the group name for a group lesson
+        or the student's name for an individual lesson.
+    </p>
+
+    <p>3. Add Lesson (+40pt)</p>
+
+    <p>Clicking on <em>Add Lesson</em> takes the user to a page where a new lesson can be added. For example:</p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Time</th>
+                    <td><input type="datetime-local" /></td>
+                </tr>
+                <tr>
+                    <th>Length</th>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td><select><option>Group</option><option>Individual</option></select></td>
+                </tr>
+                <tr>
+                    <th>Student(s)</th>
+                    <td><select><option>Minnows</option><option>Dolphins</option></select></td>
+                </tr>
+                <tr>
+                    <td colspan="2" scope="row"><button>Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that, first, the input field for <em>Time</em> uses type "datetime-local", which allows entering
+    both date and time in one field. Second, when "Group" is selected as the lesson type, the <em>Student(s)</em>
+    dropdown list shows the list of groups; if the user selects "Individual" in the lesson type dropdown list,
+    the <em>Student(s)</em> dropdown list should automatically change to the list of students, e.g. </p>
+
+    <div style="margin-left: 40px;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Time</th>
+                    <td><input type="datetime-local" /></td>
+                </tr>
+                <tr>
+                    <th>Length</th>
+                    <td><input type="text" /></td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td><select><option>Group</option><option selected>Individual</option></select></td>
+                </tr>
+                <tr>
+                    <th>Student(s)</th>
+                    <td>
+                        <select>
+                            <option>John</option><option>Jane</option>
+                            <option>Luke</option><option>Tina</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" scope="row"><button>Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><u>This feature of automatically switch between group list and student list must be implemented using
+        JavaScript/jQuery.</u> HINT: you can include both the group list and the student list in the page, and
+        use JavaScript/jQuery to show/hide one of them depending on which lesson type is selected.
+    </p>
+
+    <p>4. Group Lesson Attendance I (+30pt)</p>
+
+    <p>Even if a lesson is for a group, it does not mean all the students in the group will attend a lesson.
+        On the lessons listing page, clicking on the group name of a group lesson shows the attendance of the
+        lesson. For example:
+    </p>
+
+    <div style="margin-left: 40px;">Lesson: 11/14/2021 10:00AM</div>
+    <div style="margin-left: 40px;">Length: 90 minutes</div>
+    <div style="margin-left: 40px;">Group: Minnows</div>
+    <div style="margin-left: 40px; margin-top: 0.5em;">
+        <table border="1" cellpadding="5" cellspacing="2">
+            <tbody>
+                <tr>
+                    <td style="background: red;">John</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that the students who did not attend the lesson are shown with a red background.</p>
+
+    <p>5. Group Lesson Attendance II (+40pt)</p>
+
+    <p>On the group lesson attendance page, clicking on the name of a student marks the student as absent from
+        the lesson -- this will (a) turns the background of the table cell to red, and (b) updates the database with
+        the information that the student did not attend the lesson. <u>This feature must be implemented using
+            AJAX.</u>
+    </p>
+</body>
+
+</html>

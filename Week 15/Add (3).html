@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#add").click(function(){
+		var x = 0;
+        var y = 0;
+		if(parseInt($("input[name=x]").val()))
+			x = parseInt($("input[name=x]").val());
+		if(parseInt($("input[name=y]").val()))
+			y = parseInt($("input[name=y]").val());
+		$("#sum").html(function(){
+			return x+y; 
+		});
+	});
+});
+</script>
+</head>
+<body>
+<input type="text" name="x" /> + <input type="text" name="y" /> = <span id="sum">0</span>
+<p><button id="add">Add</button>
+</body>
+</html>
