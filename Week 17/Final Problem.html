@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS3220 Final</title>
+</head>
+
+<body>
+    <p>Please deploy your application on CS3, and package your project in a zip
+        file and submit it to Canvas. The source files should include all the
+        source code, and an HTML file <em>final.html</em> which contains a
+        hyperlink to your application on the CS3 server.</p>
+    <hr />
+
+    <p>In this exam you are going to develop a review manager web application that is similar to the ones that can be
+        found on many smart phones.</p>
+
+    <p>Your application must use a database to store the data, and you must submit an SQL script file
+        <em>final.sql</em> which contains the statements to create and populate all the tables for the
+        application. Your implementation must follow the MVC architecture and use JDBC for database access.
+        For simplicity, we assume that all user input are correct so you do not need to do input validation.
+    </p>
+
+    <p>The main page of the application displays the names of the attractions managed by the application.</p>
+
+    <div style="margin-left: 40px;">
+        <h3>Attractions</h3>
+
+        <p><a href="#">Add An Attraction</a></p>
+
+        <table border="1" cellpadding="2" cellspacing="2">
+            <thead>
+			<tr>
+                    <th>Name</th>
+					<th>Phone</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#">Disneyland Park</a></td>
+                    <td>(234) 567-8901</td>
+                </tr>
+				<tr>
+                    <td><a href="#">Six Flags Park</a></td>
+					<td>(567) 890-1234</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Universal Studios Hollywood</a></td>
+                    <td>(345) 678-9012</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that the attractions are listed in alphabetic order. For simplicity you may
+        assume that attraction names are unique.</p>
+
+    <p>A user may click on <em>Add An Attraction</em> to add a new attraction. For example:</p>
+
+    <div style="margin-left: 40px;">
+        <h3><a href="#">Attractions</a> - Add An Attraction</h3>
+
+        <table border="1" cellpadding="2" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Attraction Name:</th>
+                    <td><input name="name" type="text" /></td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td><input name="phone" type="text" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right;">
+                        <input name="add" type="submit" value="Add" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>After an attraction is added, the user should be redirected to the attractions list page. Clicking on <em>Attractions</em>
+        also takes the user back to the attraction list page.</p>
+
+    <p>Clicking on the name of an attraction in the attractions list allows the user to see all the reviews about the
+        attraction as well as adding more reviews to the attraction:</p>
+
+    <div style="margin-left: 40px;">
+        <h3><a href="#">Attractions</a> - Disneyland Park</h3>
+
+        <table border="1" cellpadding="2" cellspacing="2">
+            <tbody>
+                <tr>
+                    <th>Reviewer Name</th>
+					<th>Review</th>
+                    
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>John</td>
+                    <td>Lots of fun for all ages</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><input name="field" type="text" /></td>
+					<td><textarea name="value" ></textarea></td>
+                    <td><input name="add" type="submit" value="Add" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Note that after a new review is added, the user should be redirected back to the attractions page,
+        and there is no limit on how many reviews a user can add to an attraction.</p>
+
+    <hr />
+	
+    <p>Grading</p>
+
+    <ul>
+        <li>Display attractions list (20pt)</li>
+        <li>Add attraction (20pt)</li>
+        <li>Display attraction with reviews (30pt)</li>
+        <li>Add reviewer and review (30pt)</li>
+        <li><em>final.html</em> is missing or does not have the correct link to your application
+            on the CS3 server (-5pt)</li>
+        <li><em>Only features working correctly on the CS3 server will receive full credit.
+                Partial credit will be given at my discretion.</em></li>
+        <li><em style="text-decoration: underline;">Please do not modify your files on the
+                CS3 server after the due time. Doing so will be considered cheating.</em></li>
+    </ul>
+
+</body>
+
+</html>
