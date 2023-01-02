@@ -1,0 +1,177 @@
+ <html>
+<head>
+<title>Midterm</title>
+</head>
+<body>
+<p>In this exam you are going to develop a web application to help ITS Help Deskto keep track of service requests. Your application&nbsp; must use the MVC architecture as discussed in&nbsp;class, and the application must meet the following requirements:</p>
+<ul>
+	<li>
+		Servlets cannot be used to generate HTML content.</li>
+	<li>
+		No scripting elements are allowed in JSP pages.</li>
+</ul>
+<p>1. Display Service Requests</p>
+<p>The application should have a Requests page that lists all the service requests that are currently managed by the application. For example:</p>
+<div style="margin-left: 40px;">
+	<table border="1" cellpadding="2" cellspacing="2">
+		<thead>
+			<tr>
+				<th scope="col">
+					Request Time</th>
+				<th scope="col">
+					Requested By</th>
+				<th scope="col">
+					Service Type</th>
+				<th scope="col">
+					Status</th>
+				<th scope="col">
+					&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					2013-02-14 8:15:33AM</td>
+				<td>
+					John</td>
+				<td>
+					Phone</td>
+				<td>
+					Open</td>
+				<td>
+					<a href="#">Details</a> <a href="#">Update</a></td>
+			</tr>
+			<tr>
+				<td>
+					2013-02-18 2:11:12PM</td>
+				<td>
+					Jane</td>
+				<td>
+					Computer</td>
+				<td>
+					Assigned</td>
+				<td>
+					<a href="#">Details</a> <a href="#">Update</a></td>
+			</tr>
+			<tr>
+				<td>
+					2013-01-12 3:15:16PM</td>
+				<td>
+					Jack</td>
+				<td>
+					Account</td>
+				<td>
+					Completed</td>
+				<td>
+					<a href="#">Details</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p style="margin-left: 40px;"><a href="#">Create Service Request</a></p>
+<p>We assume that there are four service types: Computer Service, Network Service, Phone Service, and Account Service. The status of a service request can be <em>Open</em>, <em>Assigned</em>, or <em>Completed</em>. When a service request is created, its status is Open. An ITS Help Desk personnel can assign the service request to a technician and set the status of the request to Assigned. After the technician completes the service, he or she can update the request to set its status to Completed.</p>
+<p>Note that the request listing should show all the Open requests first, followed by the Assigned requests, and then the Completed requests. Requests with the same status should be ordered by request time in ascending order, and Request Time should be formatted as shown in the&nbsp;example above.</p>
+<p>2. Create Service Requests</p>
+<div style="margin-left: 40px;">
+	<table border="1" cellpadding="2" cellspacing="2">
+		<tbody>
+			<tr>
+				<td>
+					Your Name:</td>
+				<td>
+					<input name="name" type="text" /></td>
+			</tr>
+			<tr>
+				<td>
+					Service Type:</td>
+				<td>
+					<select name="service"><option value="Computer">Computer</option><option value="Network">Network</option><option value="Phone">Phone</option><option value="Account">Account</option></select></td>
+			</tr>
+			<tr>
+				<td>
+					Description of Work Requested:</td>
+				<td>
+					<textarea cols="60" name="description" rows="5"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input name="create" type="submit" value="Create" /></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Clicking on the <em>Create Service Request</em> link should take a user to the Create Request page where a new service request can be created. After the user fills out the form and clicks the <em>Create</em> button, the application should create a service request and redirect the user back to the Requests page.</p>
+<p>3. Display Service Request Details</p>
+<p>Clicking on the <em>Details</em> link of a request should take the user to the Request Details page where all the information about the service request is shown. For example:</p>
+<div style="margin-left: 40px;">
+	<table border="0" cellpadding="2" cellspacing="2">
+		<tbody>
+			<tr>
+				<td>
+					<p><strong>Computer Service requested by Jane at 2013-02-18 2:11:12PM.</strong></p>
+					<p><strong>Status</strong>: Assigned to Bob</p>
+					<p><strong>Description of Work Requested</strong>:</p>
+					<p>There seems to be a virus on my computer.</p>
+					<p><a href="#">All Requests</a></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Note that if the status of the request is Assigned or Completed, it should show the name of the technician who was assigned to or completed the request. Clicking on the <em>All Requests</em> link should take the user back to the Requests page.</p>
+<p>4. Update Service Request Status</p>
+<p>A user, presumably an ITS supervisor or technician, can click on the <em>Update</em> link of a service request to update the status of the request. If the status of a request is Open, an ITS supervisor can assign the request to one of the three ITS technician: Amy, Bob, and Tom. For example:</p>
+<div style="margin-left: 40px;">
+	<table border="0" cellpadding="2" cellspacing="2">
+		<tbody>
+			<tr>
+				<td>
+					<p><strong>Phone Service requested by John at 2013-02-14 8:15:33AM.</strong></p>
+					<p><strong>Status</strong>: Open</p>
+					<p><strong>Description of Work Requested</strong>:</p>
+					<p>My office was moved from E&amp;T A101 to E&amp;T B202. Please transfer my phone number (ext 1234) to my new office.</p>
+					<p><strong>Assign this request to</strong> <select name="technician"><option value="Amy">Amy</option><option value="Bob">Bob</option><option value="Tom">Tom</option></select> <input name="ok" type="submit" value="OK" /></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>If the status of a request is Assigned, the ITS technician who completed the service request can change the status to Completed. For example:</p>
+<div style="margin-left: 40px;">
+	<table border="0" cellpadding="2" cellspacing="2">
+		<tbody>
+			<tr>
+				<td>
+					<p><strong>Computer Service requested by Jane at 2013-02-18 2:11:12PM.</strong></p>
+					<p><strong>Status</strong>: Assigned to Bob</p>
+					<p><strong>Description of Work Requested</strong>:</p>
+					<p>There seems to be a virus on my computer.</p>
+					<p><strong>Change the status to Completed?</strong> <a href="#">Yes</a> <a href="#">No</a></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>Clicking on <em>Yes</em> should change the status to Completed and redirect the user to the Requests page; clicking on <em>No</em> simply takes the user to the Requests page.</p>
+<p>If the status of a request is Completed, the <em>Update</em> link for that request on the Requests page should be removed.</p>
+<hr />
+<p>Grading</p>
+<ul>
+	<li>
+		Display service requests (25pt)</li>
+	<li>
+		Create service requests (25pt)</li>
+	<li>
+		Display service request details (20pt)</li>
+	<li>
+		Update service request status (30pt)</li>
+	<li>
+		<i>midterm.html</i> is missing or does not have the correct link to your application on the CS3 server (-5pt)</li>
+	<li style="font-style: italic;">
+		Only features working correctly on the CS3 server will receive full credit. Partial credit will be given at my discretion.</li>
+	<li style="font-style: italic;">
+		<span style="text-decoration: underline;">Please do not modify your files on the CS3 server after the due time. Doing so will be considered cheating.</span></li>
+</ul>
+
+</body>
+</html>
